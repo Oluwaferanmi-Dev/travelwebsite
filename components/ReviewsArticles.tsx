@@ -6,7 +6,7 @@ const ReviewsArticles = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Customer Reviews</h2>
-          <p className="text-gray-600">"Lorem ipsum is simply dummy text of the printing and typesetting industry."</p>
+          <p className="text-gray-600">&ldquo;Lorem ipsum is simply dummy text of the printing and typesetting industry.&rdquo;</p>
           <p className="text-gray-800 font-bold mt-4">John Doe</p>
         </div>
         <div>

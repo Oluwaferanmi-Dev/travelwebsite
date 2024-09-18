@@ -3,7 +3,6 @@
 import { FC, FormEvent, useState } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
-
 const ContactUs: FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -27,9 +26,9 @@ const ContactUs: FC = () => {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(formData),
       });
       if (response.ok) {
         setStatus('Message sent successfully!');
@@ -37,16 +36,16 @@ const ContactUs: FC = () => {
           name: '',
           email: '',
           subject: '',
-          message: ''
+          message: '',
         });
       } else {
         setStatus('Failed to send message.');
       }
-    } catch (error) {
+    } catch {
       setStatus('An error occurred.');
     }
   };
-
+  
   return (
     <>
       <Header />

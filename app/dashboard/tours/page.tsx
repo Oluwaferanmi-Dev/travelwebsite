@@ -14,15 +14,15 @@ const ToursPage = () => {
             {/* Tour 1 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="/images/tour1.jpg"
+                src="/images/Tours/Abujatour.jpg"
                 alt="Tour 1"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Tropical Beach Escape</h2>
-                <p className="text-gray-700 mb-4">Enjoy a serene getaway to a beautiful tropical beach, where the sand is golden and the waters crystal clear.</p>
+                <h2 className="text-2xl font-bold mb-4"> Abuja: explore the art and crafts market</h2>
+                <p className="text-gray-700 mb-4">explore the art and craft market in Abuja a vibrant hub showcasing a rich diversity of Nigeria it offers traditional artworks, textiles, sculptures, jewelry, and more.</p>
                 <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
               </div>
             </div>
@@ -30,15 +30,15 @@ const ToursPage = () => {
             {/* Tour 2 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="/images/tour2.jpg"
+                src="/images/Tours/AbujaCrushTour.jpg"
                 alt="Tour 2"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Mountain Hiking Adventure</h2>
-                <p className="text-gray-700 mb-4">Challenge yourself with a hiking adventure to breathtaking mountain peaks and scenic views.</p>
+                <h2 className="text-2xl font-bold mb-4">Abuja: Explore Ushafa Crush Rock with lunch</h2>
+                <p className="text-gray-700 mb-4">Discover the hidden wonder of Ushafa Crush Rock, where the surroundings artistry meets breathtaking views.</p>
                 <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
               </div>
             </div>
@@ -46,15 +46,15 @@ const ToursPage = () => {
             {/* Tour 3 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="/images/tour3.jpg"
+                src="/images/Tours/LagosTour.jpg"
                 alt="Tour 3"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Cultural City Tour</h2>
-                <p className="text-gray-700 mb-4">Immerse yourself in the vibrant culture of the city with a guided tour of historical landmarks and local attractions.</p>
+                <h2 className="text-2xl font-bold mb-4">Lagos: Experience 1 Day Adventure</h2>
+                <p className="text-gray-700 mb-4">This tour will give you the best of experience of some of the notable parts of Lagos.</p>
                 <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
               </div>
             </div>
@@ -62,15 +62,15 @@ const ToursPage = () => {
             {/* Tour 4 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="/images/tour4.jpg"
+                src="/images/Tours/SlaveTrade.jpg"
                 alt="Tour 4"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Safari Adventure</h2>
-                <p className="text-gray-700 mb-4">Embark on an unforgettable safari adventure and witness wildlife up close in their natural habitat.</p>
+                <h2 className="text-2xl font-bold mb-4">Makoko Floating Community Tour</h2>
+                <p className="text-gray-700 mb-4">Explore the Makoko community, the world’s largest floating village which lives on stilt houses on water. Discover Lagos’s own Venice on this guided canoe ride through the watery fishing neighborhood.</p>
                 <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
               </div>
             </div>
@@ -78,15 +78,15 @@ const ToursPage = () => {
             {/* Tour 5 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="/images/tour5.jpg"
+                src="/images/Tours/OsunOsogbo.jpg"
                 alt="Tour 5"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Island Hopping Tour</h2>
-                <p className="text-gray-700 mb-4">Explore multiple islands, each with its own unique charm and beauty, on a day of island hopping adventures.</p>
+                <h2 className="text-2xl font-bold mb-4">Slave Trade Tour</h2>
+                <p className="text-gray-700 mb-4">The story of 400 years of slavery cannot be told without a visit to the former slave port. This is a private tour to explore the former slave quarters and see the preserved relics at the Slave Museums</p>
                 <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
               </div>
             </div>
@@ -94,15 +94,15 @@ const ToursPage = () => {
             {/* Tour 6 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <Image
-                src="/images/tour6.jpg"
+                src="/images/Tours/OsunOsogbo.jpg"
                 alt="Tour 6"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"
               />
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Desert Safari Experience</h2>
-                <p className="text-gray-700 mb-4">Experience the thrills of a desert safari, including dune bashing, camel rides, and a beautiful desert sunset.</p>
+                <h2 className="text-2xl font-bold mb-4">Osun Osogbo Sacred Grove Tour</h2>
+                <p className="text-gray-700 mb-4">This is a UNESCO Heritage site with rich history, culture, and tradition. It is open and available to anyone who is interested in increasing their knowledge in a fun way.</p>
                 <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
               </div>
             </div>

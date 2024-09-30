@@ -11,8 +11,8 @@ export default function Home() {
       <Header />
       <HeroSection />
       <PopularPackages />
-      <ReviewsArticles />
       <InternationalPackages />
+      <ReviewsArticles />
       <Footer />
     </>
   );

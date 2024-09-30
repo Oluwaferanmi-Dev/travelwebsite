@@ -16,7 +16,7 @@ const AboutUs: FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative h-80 bg-gray-200 rounded-lg overflow-hidden">
               <Image
-                src="/images/travel-agency-team.jpg"
+                src="/images/About/team.jpg"
                 alt="Our Team"
                 layout="fill"
                 objectFit="cover"

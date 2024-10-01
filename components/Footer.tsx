@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="font-bold mb-4 text-lg">About Us</h3>
-            <p className="text-sm">We are a dedicated travel agency providing amazing travel experiences.</p>
+            <p className="text-sm">Curating once-in-a-lifetime experiences in breathtaking destinations. Let’s make your travel dreams come true</p>
           </div>
           <div>
             <h3 className="font-bold mb-4 text-lg">Quick Links</h3>
@@ -20,15 +20,14 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="font-bold mb-4 text-lg">Contact Us</h3>
-            <p className="text-sm">123 Main St, City, Country</p>
-            <p className="text-sm">+123 456 789</p>
+            <p className="text-sm">123 Main St, Lagos City, Nigeria</p>
+            <p className="text-sm">+234 456 789</p>
           </div>
           <div>
             <h3 className="font-bold mb-4 text-lg">Follow Us</h3>
             <ul className="flex space-x-4">
               <li><Link href="#" className="text-gray-400 hover:text-white">Facebook</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-white">Twitter</Link></li>
-              <li><Link href="#" className="text-gray-400 hover:text-white">Instagram</Link></li>
+              <li><Link href="https://www.instagram.com/tripswitglory/" className="text-gray-400 hover:text-white">Instagram</Link></li>
             </ul>
           </div>
         </div>

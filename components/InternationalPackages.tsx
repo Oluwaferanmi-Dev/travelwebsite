@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 const InternationalPackages = () => {
-  const packages = ['Bangkok', 'Hawaii', 'Swiss Peaks', 'Dubai'];
+  const packages = ['Bangkok', 'Hawaii', 'Mauritius', 'Dubai'];
 
   return (
     <section className="py-16 bg-gray-50">

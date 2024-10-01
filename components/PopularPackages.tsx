@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 const PopularPackages = () => {
   const packages = [
-    { city: 'Paris', price: '$999', img: '/images/paris.jpg' },
-    { city: 'Greece', price: '$899', img: '/images/greece.jpg' },
-    { city: 'USA', price: '$1099', img: '/images/usa.jpg' },
-    { city: 'Dubai', price: '$799', img: '/images/dubai.jpg' },
+    { city: 'Lagos', price: '$50', img: '/images/Lekki-ikoyi.jpg' },
+    { city: 'Cross Rivers', price: '$40', img: '/images/obudu.jpg' },
+    { city: 'Abuja', price: '$70', img: '/images/Abuja.jpg' },
+    { city: 'Calabar', price: '$50', img: '/images/Calabar.jpg' },
   ];
 
   return (

@@ -12,10 +12,11 @@ const InternationalPackages = () => {
             <div key={location} className="bg-white rounded-lg shadow-md overflow-hidden transition-shadow hover:shadow-lg">
               <Image
                 src={`/images/${location.toLowerCase().replace(/ /g, '-')}.jpg`}
-                alt={location}
+                alt={`${location} Adventure`}
                 className="w-full h-48 object-cover"
                 width={300}
                 height={200}
+                loading="lazy"
               />
               <div className="p-4">
                 <h3 className="font-bold text-lg">{location} Adventure</h3>

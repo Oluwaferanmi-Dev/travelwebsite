@@ -36,59 +36,43 @@ const AboutUs: FC = () => {
         </section>
         
         <section className="container mx-auto mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Meet Our Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="relative h-40 bg-gray-200 rounded-full overflow-hidden">
-                <Image
-                  src="/images/team-member1.jpg"
-                  alt="Team Member 1"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-full"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mt-4">John Doe</h3>
-              <p className="text-gray-600">Founder & CEO</p>
-              <p className="text-gray-600 mt-2">
-                John is the visionary behind Travel Agency. With over 15 years of experience in the travel industry, he leads our team with passion and dedication.
-              </p>
+        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Meet Our Team</h2>
+        <div className="flex justify-around">
+          <div className="bg-white p-6 rounded-lg shadow-md text-center w-full md:w-1/3 lg:w-1/4">
+            <div className="relative h-40 bg-gray-200 rounded-full overflow-hidden mx-auto">
+              <Image
+                src="/images/team-member1.jpg"
+                alt="Team Member 1"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-full"
+              />
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="relative h-40 bg-gray-200 rounded-full overflow-hidden">
-                <Image
-                  src="/images/team-member2.jpg"
-                  alt="Team Member 2"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-full"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mt-4">Jane Smith</h3>
-              <p className="text-gray-600">Travel Consultant</p>
-              <p className="text-gray-600 mt-2">
-                Jane brings her extensive travel knowledge and expertise to help clients plan their perfect trips. She’s passionate about delivering exceptional service.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="relative h-40 bg-gray-200 rounded-full overflow-hidden">
-                <Image
-                  src="/images/team-member3.jpg"
-                  alt="Team Member 3"
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-full"
-                />
-              </div>
-              <h3 className="text-xl font-semibold mt-4">Alice Johnson</h3>
-              <p className="text-gray-600">Customer Support</p>
-              <p className="text-gray-600 mt-2">
-                Alice is the friendly face behind our customer support. She ensures that every client’s needs are met promptly and effectively.
-              </p>
-            </div>
+            <h3 className="text-xl font-semibold mt-4">John Doe</h3>
+            <p className="text-gray-600">Founder & CEO</p>
+            <p className="text-gray-600 mt-2">
+              John is the visionary behind Travel Agency. With over 15 years of experience in the travel industry, he leads our team with passion and dedication.
+            </p>
           </div>
-        </section>
-        
+
+          <div className="bg-white p-6 rounded-lg shadow-md text-center w-full md:w-1/3 lg:w-1/4">
+            <div className="relative h-40 bg-gray-200 rounded-full overflow-hidden mx-auto">
+              <Image
+                src="/images/team-member2.jpg"
+                alt="Team Member 2"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-full"
+              />
+            </div>
+            <h3 className="text-xl font-semibold mt-4">Jane Smith</h3>
+            <p className="text-gray-600">Travel Consultant</p>
+            <p className="text-gray-600 mt-2">
+              Jane brings her extensive travel knowledge and expertise to help clients plan their perfect trips. She’s passionate about delivering exceptional service.
+            </p>
+          </div>
+        </div>
+      </section> 
         <section className="container mx-auto mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

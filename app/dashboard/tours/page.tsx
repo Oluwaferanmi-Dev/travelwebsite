@@ -1,117 +1,140 @@
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import Image from 'next/image';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { Plane, Luggage, PartyPopper, Heart } from "lucide-react";
 
-const ToursPage = () => {
+export default function TourPackages() {
+  const tourPackages = [
+    // New Tours
+    { name: "Dubai Tour packages", description: "Experience the beauty and culture of Dubai.", imageSrc: "/images/tours/dubai.jpg" },
+    { name: "Tour Kenya safaris", description: "Experience the beauty and culture of Kenya safaris.", imageSrc: "/images/Tours/kenyasafaris.jpg" },
+    { name: "Zanzibar", description: "Experience the beauty and culture of Zanzibar.", imageSrc: "/images/Tours/zanzibar.jpg" },
+    { name: "Cape Town", description: "Experience the beauty and culture of Cape Town.", imageSrc: "/images/Tours/CapeTown.jpg" },
+    { name: "La campaign tropical", description: "Experience the beauty and culture of La campaign tropical.", imageSrc: "/images/Tours/Lacampaigntropical.jpg" },
+
+    // Old Tours with updated images
+    { name: "Abuja: Explore the Art and Crafts Market", description: "Explore the vibrant art and craft market in Abuja, showcasing a rich diversity of Nigerian culture.", imageSrc: "/images/Tours/Abujatour.jpg" },
+    { name: "Abuja: Explore Ushafa Crush Rock with Lunch", description: "Discover the hidden wonder of Ushafa Crush Rock, where the surroundings artistry meets breathtaking views.", imageSrc: "/images/Tours/AbujaCrushTour.jpg" },
+    { name: "Lagos: Experience 1-Day Adventure", description: "This tour will give you the best experience of some of the notable parts of Lagos.", imageSrc: "/images/Tours/LagosTour.jpg" },
+    { name: "Makoko Floating Community Tour", description: "Explore the Makoko community, Lagos's own Venice on this guided canoe ride.", imageSrc: "/images/Tours/MakokoTour.jpg" },
+    { name: "Slave Trade Tour", description: "Explore the former slave quarters and see the preserved relics at the Slave Museums.", imageSrc: "/images/Tours/SlaveTrade.jpg" },
+    { name: "Osun Osogbo Sacred Grove Tour", description: "Visit this UNESCO Heritage site rich in history and tradition.", imageSrc: "/images/Tours/OsunOsogbo.jpg" }
+  ];
+
   return (
     <>
       <Header />
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4 md:px-8">
-          <h1 className="text-4xl font-bold text-center mb-12">Our Tours</h1>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold text-center mb-8">Our Tour Packages and Services</h1>
+        <Tabs defaultValue="tours" className="w-full">
+          <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsTrigger value="tours">Tour Packages</TabsTrigger>
+            <TabsTrigger value="visas">Visa Services</TabsTrigger>
+            <TabsTrigger value="events">Events</TabsTrigger>
+          </TabsList>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Tour 1 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="/images/Tours/Abujatour.jpg"
-                alt="Tour 1"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4"> Abuja: explore the art and crafts market</h2>
-                <p className="text-gray-700 mb-4">explore the art and craft market in Abuja a vibrant hub showcasing a rich diversity of Nigeria it offers traditional artworks, textiles, sculptures, jewelry, and more.</p>
-                <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
-              </div>
+          <TabsContent value="tours">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {tourPackages.map((tour, index) => (
+                <Card key={index}>
+                  <Image src={tour.imageSrc} alt={tour.name} width={600} height={400} className="w-full h-auto object-cover" />
+                  <CardHeader>
+                    <CardTitle>{tour.name}</CardTitle>
+                    <CardDescription>Explore amazing destinations</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="mb-4">{tour.description}</p>
+                    <Button className="w-full">
+                      <Plane className="mr-2 h-4 w-4" /> Book Now
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
+          </TabsContent>
 
-            {/* Tour 2 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="/images/Tours/AbujaCrushTour.jpg"
-                alt="Tour 2"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Abuja: Explore Ushafa Crush Rock with lunch</h2>
-                <p className="text-gray-700 mb-4">Discover the hidden wonder of Ushafa Crush Rock, where the surroundings artistry meets breathtaking views.</p>
-                <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
-              </div>
+          {/* Visa Services */}
+          <TabsContent value="visas">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {["DUBAI", "UK", "USA", "KENYA", "EAST-AFRICA", "South Africa"].map((country) => (
+                <Card key={country} className="text-center">
+                  <CardHeader>
+                    <CardTitle>{country}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Luggage className="mx-auto mb-4 h-12 w-12 text-primary" />
+                    <Button variant="outline" className="w-full">Apply for Visa</Button>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
+          </TabsContent>
 
-            {/* Tour 3 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="/images/Tours/LagosTour.jpg"
-                alt="Tour 3"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Lagos: Experience 1 Day Adventure</h2>
-                <p className="text-gray-700 mb-4">This tour will give you the best of experience of some of the notable parts of Lagos.</p>
-                <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
-              </div>
-            </div>
+          {/* Events */}
+          <TabsContent value="events">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card>
+              <Image src="/images/Tours/wedding.jpg" alt="Wedding Event" width={600} height={400} className="w-full h-auto object-cover" />
+              <CardHeader>
+                <CardTitle>Weddings</CardTitle>
+                <CardDescription>Plan your perfect wedding</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside mb-4">
+                  <li>Destination weddings</li>
+                  <li>Wedding planning services</li>
+                  <li>Honeymoon packages</li>
+                </ul>
+                <Button className="w-full">
+                  <Heart className="mr-2 h-4 w-4" /> Learn More
+                </Button>
+              </CardContent>
+            </Card>
 
-            {/* Tour 4 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="/images/Tours/SlaveTrade.jpg"
-                alt="Tour 4"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Makoko Floating Community Tour</h2>
-                <p className="text-gray-700 mb-4">Explore the Makoko community, the world’s largest floating village which lives on stilt houses on water. Discover Lagos’s own Venice on this guided canoe ride through the watery fishing neighborhood.</p>
-                <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
-              </div>
-            </div>
+            <Card>
+              <Image src="/images/Tours/special.jpg" alt="Special Occasion Event" width={600} height={400} className="w-full h-auto object-cover" />
+              <CardHeader>
+                <CardTitle>Special Occasions</CardTitle>
+                <CardDescription>Celebrate in style</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside mb-4">
+                  <li>Bridal showers</li>
+                  <li>Honeymoon tool-kit</li>
+                  <li>Honeymoon suite</li>
+                </ul>
+                <Button className="w-full">
+                  <PartyPopper className="mr-2 h-4 w-4" /> Book Event
+                </Button>
+              </CardContent>
+            </Card>
 
-            {/* Tour 5 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="/images/Tours/OsunOsogbo.jpg"
-                alt="Tour 5"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Slave Trade Tour</h2>
-                <p className="text-gray-700 mb-4">The story of 400 years of slavery cannot be told without a visit to the former slave port. This is a private tour to explore the former slave quarters and see the preserved relics at the Slave Museums</p>
-                <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
-              </div>
-            </div>
-
-            {/* Tour 6 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <Image
-                src="/images/Tours/OsunOsogbo.jpg"
-                alt="Tour 6"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-4">Osun Osogbo Sacred Grove Tour</h2>
-                <p className="text-gray-700 mb-4">This is a UNESCO Heritage site with rich history, culture, and tradition. It is open and available to anyone who is interested in increasing their knowledge in a fun way.</p>
-                <a href="#" className="text-teal-500 hover:text-teal-700 font-bold">Book Now</a>
-              </div>
-            </div>
+            <Card>
+              <Image src="/images/Tours/retreat.jpg" alt="Retreat Event" width={600} height={400} className="w-full h-auto object-cover" />
+              <CardHeader>
+                <CardTitle>Retreats</CardTitle>
+                <CardDescription>Relax and rejuvenate</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside mb-4">
+                  <li>Corporate retreats</li>
+                  <li>Spiritual retreats</li>
+                  <li>Yoga retreats</li>
+                </ul>
+                <Button className="w-full">
+                  <Heart className="mr-2 h-4 w-4" /> Learn More
+                </Button>
+              </CardContent>
+            </Card>
           </div>
-        </div>
-      </section>
+        </TabsContent>
+
+        </Tabs>
+      </div>
       <Footer />
     </>
   );
-};
-
-export default ToursPage;
+}

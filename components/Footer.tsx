@@ -1,39 +1,40 @@
-import Link from 'next/link';
+import Link from 'next/link'
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-bold mb-4 text-lg">About Us</h3>
-            <p className="text-sm">Curating once-in-a-lifetime experiences in breathtaking destinations. Let’s make your travel dreams come true</p>
+            <h3 className="font-bold mb-2">About Us</h3>
+            <p className="text-sm">Your trusted travel partner for unforgettable adventures around the world.</p>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-lg">Quick Links</h3>
-            <ul className="space-y-2">
-            <li><Link href="/dashboard/destinations" className="text-gray-700 hover:text-gray-900">Destinations</Link></li>
-            <li><Link href="/dashboard/blog" className="text-gray-700 hover:text-gray-900">Blog</Link></li>
-            <li><Link href="/dashboard/about-us" className="text-gray-700 hover:text-gray-900">About Us</Link></li>
-            <li><Link href="/dashboard/contact-us" className="text-gray-700 hover:text-gray-900">Contact Us</Link></li>
+            <h3 className="font-bold mb-2">Quick Links</h3>
+            <ul className="text-sm">
+              <li><Link href="#">Home</Link></li>
+              <li><Link href="#">Destinations</Link></li>
+              <li><Link href="#">Tours</Link></li>
+              <li><Link href="#">Contact</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-lg">Contact Us</h3>
-            <p className="text-sm">123 Main St, Lagos City, Nigeria</p>
-            <p className="text-sm">+234 456 789</p>
+            <h3 className="font-bold mb-2">Contact Us</h3>
+            <p className="text-sm">123 Travel Street, City, Country</p>
+            <p className="text-sm">Phone: +1 234 567 890</p>
+            <p className="text-sm">Email: info@travelagency.com</p>
           </div>
           <div>
-            <h3 className="font-bold mb-4 text-lg">Follow Us</h3>
-            <ul className="flex space-x-4">
-              <li><Link href="#" className="text-gray-400 hover:text-white">Facebook</Link></li>
-              <li><Link href="https://www.instagram.com/tripswitglory/" className="text-gray-400 hover:text-white">Instagram</Link></li>
-            </ul>
+            <h3 className="font-bold mb-2">Newsletter</h3>
+            <form className="flex">
+              <Input type="email" placeholder="Your email" className="rounded-r-none" />
+              <Button type="submit" className="rounded-l-none">Subscribe</Button>
+            </form>
           </div>
         </div>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}

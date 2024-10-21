@@ -15,10 +15,10 @@ const Header = () => {
       <div className="flex items-center space-x-4">
         <Link href="/">
           <Image
-            src="/images/tripswithgloryylogo.png"
+            src="/images/tripswithgloryylogo.svg"
             alt="Travel Agency Logo"
-            width={40}
-            height={40}
+            width={170}
+            height={170}
             className="cursor-pointer"
           />
         </Link>
@@ -53,3 +53,5 @@ const Header = () => {
 };
 
 export default Header;
+
+

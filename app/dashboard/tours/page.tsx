@@ -9,8 +9,8 @@ import { Plane, Luggage, PartyPopper, Heart } from "lucide-react";
 export default function TourPackages() {
   const tourPackages = [
     { name: "Dubai Tour Packages", description: "Experience the beauty and culture of Dubai.", imageSrc: "/images/Tours/dubai.jpg" },
-    { name: "Kenya Safaris", description: "Experience the beauty and culture of Kenya safaris.", imageSrc: "/images/Tours/kenyasafaris.jpg" },
-    { name: "Zanzibar", description: "Experience the beauty and culture of Zanzibar.", imageSrc: "/images/Tours/zanzibar.jpg" },
+    { name: "Kenya Safaris", description: "Experience the beauty and culture of Kenya safaris.", imageSrc: "/images/Tours/Kenyasafaris.jpg" },
+    { name: "Zanzibar", description: "Experience the beauty and culture of Zanzibar.", imageSrc: "/images/Tours/Zanzibar.jpg" },
     { name: "Cape Town", description: "Experience the beauty and culture of Cape Town.", imageSrc: "/images/Tours/CapeTown.jpg" },
     { name: "La Campagne Tropicana", description: "Experience the beauty and culture of La Campagne Tropicana.", imageSrc: "/images/Tours/Lacampaigntropical.jpg" },
     { name: "Abuja: Explore the Art and Crafts Market", description: "Explore the vibrant art and craft market in Abuja, showcasing a rich diversity of Nigerian culture.", imageSrc: "/images/Tours/Abujatour.jpg" },

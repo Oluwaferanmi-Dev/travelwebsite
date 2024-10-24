@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 const InternationalPackages = () => {
-  // An array of objects with the name of the location and its image path
+  
   const packages = [
-    { location: 'Bangkok', imageUrl: '/images/bangkok.jpg' },
-    { location: 'Hawaii', imageUrl: '/images/hawaii.jpg' },
+    { location: 'Bangkok', imageUrl: '/images/Bangkok.jpg' },
+    { location: 'Hawaii', imageUrl: '/images/Hawaii.jpg' },
     { location: 'Mauritius', imageUrl: '/images/mauritius.jpg' },
     { location: 'Dubai', imageUrl: '/images/dubai.jpg' },
   ];
@@ -17,7 +17,7 @@ const InternationalPackages = () => {
           {packages.map((pkg) => (
             <div key={pkg.location} className="bg-white rounded-lg shadow-md overflow-hidden transition-shadow hover:shadow-lg">
               <Image
-                src={pkg.imageUrl} // Use pre-defined image path
+                src={pkg.imageUrl}
                 alt={`${pkg.location} Adventure`}
                 className="w-full h-48 object-cover"
                 width={300}

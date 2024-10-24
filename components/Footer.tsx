@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-teal-900 text-white py-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -14,10 +14,10 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-2">Quick Links</h3>
             <ul className="text-sm">
-              <li><Link href="#">Home</Link></li>
-              <li><Link href="#">Destinations</Link></li>
-              <li><Link href="#">Tours</Link></li>
-              <li><Link href="#">Contact</Link></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/dashboard/destinations">Destinations</Link></li>
+              <li><Link href="/dashboard/tours">Tours</Link></li>
+              <li><Link href="/dashboard/contact-us">Contact</Link></li>
             </ul>
           </div>
           <div>

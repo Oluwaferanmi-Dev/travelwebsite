@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 
 export default function Footer() {
   return (
@@ -25,13 +23,6 @@ export default function Footer() {
             <p className="text-sm">123 Travel Street, City, Country</p>
             <p className="text-sm">Phone: +1 234 567 890</p>
             <p className="text-sm">Email: info@travelagency.com</p>
-          </div>
-          <div>
-            <h3 className="font-bold mb-2">Newsletter</h3>
-            <form className="flex">
-              <Input type="email" placeholder="Your email" className="rounded-r-none" />
-              <Button type="submit" className="rounded-l-none">Subscribe</Button>
-            </form>
           </div>
         </div>
       </div>

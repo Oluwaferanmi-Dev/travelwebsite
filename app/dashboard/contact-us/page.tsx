@@ -13,7 +13,7 @@ const ContactUs: FC = () => {
   });
 
   const [status, setStatus] = useState('');
-  const [statusTimeout, setStatusTimeout] = useState<NodeJS.Timeout | null>(null); // Store the timeout
+  const [statusTimeout, setStatusTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -42,21 +42,18 @@ const ContactUs: FC = () => {
         message: '',
       });
 
-      // Clear any previous timeout and set a new one
       if (statusTimeout) clearTimeout(statusTimeout);
-      const timeout = setTimeout(() => setStatus(''), 3000); // Disappear after 3 seconds
+      const timeout = setTimeout(() => setStatus(''), 3000);
       setStatusTimeout(timeout);
     } else {
       setStatus('Failed to send message.');
 
-      // Clear any previous timeout and set a new one
       if (statusTimeout) clearTimeout(statusTimeout);
-      const timeout = setTimeout(() => setStatus(''), 3000); // Disappear after 3 seconds
+      const timeout = setTimeout(() => setStatus(''), 3000);
       setStatusTimeout(timeout);
     }
   };
 
-  // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
       if (statusTimeout) clearTimeout(statusTimeout);
@@ -119,7 +116,7 @@ const ContactUs: FC = () => {
           </div>
           <button
             type="submit"
-            className="w-full bg-teal-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-teal-700 transition"
+            className="w-full bg-teal-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-teal-700 transition border-2 border-teal-600 hover:border-teal-700"
           >
             Send Message
           </button>

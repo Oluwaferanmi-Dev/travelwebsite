@@ -15,8 +15,14 @@ const PopularPackages = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {packages.map(({ city, img }) => (
             <div key={city} className="rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105">
-              <div className="relative h-64">
-                <Image src={img} alt={`Beautiful view of ${city}`} layout="fill" objectFit="cover" loading="lazy" />
+              <div className="relative h-64"> {/* Set your desired height */}
+                <Image
+                  src={img}
+                  alt={`Beautiful view of ${city}`}
+                  fill // Use fill prop for responsive images
+                  className="object-cover" // CSS class to manage object fit
+                  loading="lazy"
+                />
               </div>
               <div className="bg-white p-4 text-center">
                 <h3 className="text-xl font-bold text-gray-800">{city}</h3>

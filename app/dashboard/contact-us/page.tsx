@@ -1,8 +1,9 @@
-"use client";  
+"use client";
 
-import { FC, FormEvent, useState } from 'react';
+import { FC, FormEvent, useState, useEffect } from 'react';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
+
 const ContactUs: FC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,6 +13,7 @@ const ContactUs: FC = () => {
   });
 
   const [status, setStatus] = useState('');
+  const [statusTimeout, setStatusTimeout] = useState<NodeJS.Timeout | null>(null); // Store the timeout
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -22,91 +24,106 @@ const ContactUs: FC = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+
+    const response = await fetch('/api/sendEmail', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus('Message sent successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
       });
-      if (response.ok) {
-        setStatus('Message sent successfully!');
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        });
-      } else {
-        setStatus('Failed to send message.');
-      }
-    } catch {
-      setStatus('An error occurred.');
+
+      // Clear any previous timeout and set a new one
+      if (statusTimeout) clearTimeout(statusTimeout);
+      const timeout = setTimeout(() => setStatus(''), 3000); // Disappear after 3 seconds
+      setStatusTimeout(timeout);
+    } else {
+      setStatus('Failed to send message.');
+
+      // Clear any previous timeout and set a new one
+      if (statusTimeout) clearTimeout(statusTimeout);
+      const timeout = setTimeout(() => setStatus(''), 3000); // Disappear after 3 seconds
+      setStatusTimeout(timeout);
     }
   };
-  
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (statusTimeout) clearTimeout(statusTimeout);
+    };
+  }, [statusTimeout]);
+
   return (
     <>
       <Header />
-      <main className="py-16 px-4 max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Contact Us</h1>
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg">
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+      <main className="py-16 px-4 max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold text-gray-800 mb-8 text-center">Contact Us</h1>
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+          <div className="mb-6">
+            <label htmlFor="name" className="block text-lg font-medium text-gray-700">Name</label>
             <input
               type="text"
               id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+              className="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm p-3 focus:ring-teal-500 focus:border-teal-500"
               required
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+          <div className="mb-6">
+            <label htmlFor="email" className="block text-lg font-medium text-gray-700">Email</label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+              className="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm p-3 focus:ring-teal-500 focus:border-teal-500"
               required
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700">Subject</label>
+          <div className="mb-6">
+            <label htmlFor="subject" className="block text-lg font-medium text-gray-700">Subject</label>
             <input
               type="text"
               id="subject"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+              className="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm p-3 focus:ring-teal-500 focus:border-teal-500"
               required
             />
           </div>
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+          <div className="mb-6">
+            <label htmlFor="message" className="block text-lg font-medium text-gray-700">Message</label>
             <textarea
               id="message"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
-              rows={4}
+              className="mt-2 block w-full border border-gray-300 rounded-lg shadow-sm p-3 focus:ring-teal-500 focus:border-teal-500"
+              rows={6}
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-teal-500 text-white py-2 rounded"
+            className="w-full bg-teal-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-teal-700 transition"
           >
             Send Message
           </button>
-          {status && <p className="mt-4 text-sm">{status}</p>}
+          {status && <p className="mt-4 text-center text-sm font-semibold">{status}</p>}
         </form>
       </main>
       <Footer />

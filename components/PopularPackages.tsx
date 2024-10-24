@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const PopularPackages = () => {
   const packages = [
-    { city: 'Lagos', img: '/images/Lekki-ikoyi.jpg' },
+    { city: 'Lagos', img: '/images/lekki-ikoyi.jpg' },
     { city: 'Cross Rivers', img: '/images/obudu.jpg' },
     { city: 'Abuja', img: '/images/Abuja.jpg' },
     { city: 'Calabar', img: '/images/Calabar.jpg' },

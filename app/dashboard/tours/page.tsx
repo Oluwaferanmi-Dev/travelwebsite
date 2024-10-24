@@ -8,7 +8,7 @@ import { Plane, Luggage, PartyPopper, Heart } from "lucide-react";
 
 export default function TourPackages() {
   const tourPackages = [
-    { name: "Dubai Tour Packages", description: "Experience the beauty and culture of Dubai.", imageSrc: "/images/tours/dubai.jpg" },
+    { name: "Dubai Tour Packages", description: "Experience the beauty and culture of Dubai.", imageSrc: "/images/Tours/dubai.jpg" },
     { name: "Kenya Safaris", description: "Experience the beauty and culture of Kenya safaris.", imageSrc: "/images/Tours/kenyasafaris.jpg" },
     { name: "Zanzibar", description: "Experience the beauty and culture of Zanzibar.", imageSrc: "/images/Tours/zanzibar.jpg" },
     { name: "Cape Town", description: "Experience the beauty and culture of Cape Town.", imageSrc: "/images/Tours/CapeTown.jpg" },
